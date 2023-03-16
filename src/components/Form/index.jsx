@@ -1,7 +1,10 @@
 import "./Form.css"
 import BoxText from "../BoxText"
+import List from "../List"
 
 const Form = () => {
+  const team = ["Loud", "Furia", "Keyed Stars", "TBK Esports", "Oddik"]
+
   return (
     <section className="content">
       <form>
@@ -9,6 +12,7 @@ const Form = () => {
         <BoxText label="Nome" placeholder="Digite seu nome" />
         <BoxText label="Cargo" placeholder="Digite seu cargo" />
         <BoxText label="imagem" placeholder="informe o endereço da imagem" />
+        <List label="Time" items={team} />
       </form>
     </section>
   )
