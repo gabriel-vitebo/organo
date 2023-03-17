@@ -1,18 +1,29 @@
 import "./Form.css"
 import BoxText from "../BoxText"
 import List from "../List"
+import Button from "../Button"
 
 const Form = () => {
   const team = ["Loud", "Furia", "Keyed Stars", "TBK Esports", "Oddik"]
 
+  const handleSave = (e) => {
+    e.preventDefault()
+    console.log("enviou")
+  }
+
   return (
     <section className="content">
-      <form>
+      <form onSubmit={handleSave}>
         <h2>Preencha os dados para criar o card do colaborador:</h2>
-        <BoxText label="Nome" placeholder="Digite seu nome" />
-        <BoxText label="Cargo" placeholder="Digite seu cargo" />
+        <BoxText isRequired={true} label="Nome" placeholder="Digite seu nome" />
+        <BoxText
+          isRequired={true}
+          label="Cargo"
+          placeholder="Digite seu cargo"
+        />
         <BoxText label="imagem" placeholder="informe o endereço da imagem" />
-        <List label="Time" items={team} />
+        <List isRequired={true} label="Time" items={team} />
+        <Button>Criar card</Button>
       </form>
     </section>
   )
