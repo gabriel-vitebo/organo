@@ -18,8 +18,8 @@ const Form = () => {
         <BoxText isRequired={true} label="Nome" placeholder="Digite seu nome" />
         <BoxText
           isRequired={true}
-          label="Cargo"
           placeholder="Digite seu cargo"
+          label="Cargo"
         />
         <BoxText label="imagem" placeholder="informe o endereço da imagem" />
         <List isRequired={true} label="Time" items={team} />
