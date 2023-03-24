@@ -5,16 +5,6 @@ import Button from "../Button"
 import { useState } from "react"
 
 const Form = (props) => {
-  const listTeam = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ]
-
   const [name, setName] = useState("")
   const [office, setOffice] = useState("")
   const [image, setImage] = useState("")
@@ -59,7 +49,7 @@ const Form = (props) => {
           onModified={(value) => setTeam(value)}
           isRequired={true}
           label="Time"
-          items={listTeam}
+          items={props.teamsName}
         />
         <Button>Criar card</Button>
       </form>
