@@ -4,7 +4,7 @@ import List from "../List"
 import Button from "../Button"
 import { useState } from "react"
 
-const Form = () => {
+const Form = (props) => {
   const listTeam = [
     "Programação",
     "Front-End",
@@ -22,7 +22,12 @@ const Form = () => {
 
   const handleSave = (e) => {
     e.preventDefault()
-    console.log("enviou =>", name, office, image, team)
+    props.whenRegisteringACollaborator({
+      name,
+      office,
+      image,
+      team,
+    })
   }
 
   return (
