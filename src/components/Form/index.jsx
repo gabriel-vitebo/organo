@@ -36,20 +36,20 @@ const Form = (props) => {
           isRequired={true}
           label="Nome"
           placeholder="Digite seu nome"
-          value={name}
+          valueText={name}
           onModified={(value) => setName(value)}
         />
         <BoxText
           isRequired={true}
           placeholder="Digite seu cargo"
           label="Cargo"
-          value={office}
+          valueText={office}
           onModified={(value) => setOffice(value)}
         />
         <BoxText
           label="imagem"
           placeholder="informe o endereço da imagem"
-          value={image}
+          valueText={image}
           onModified={(value) => setImage(value)}
         />
         <List
