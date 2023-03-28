@@ -10,6 +10,13 @@ const Form = (props) => {
   const [image, setImage] = useState("")
   const [team, setTeam] = useState("")
 
+  function cleanForm() {
+    setName("")
+    setOffice("")
+    setImage("")
+    setTeam("")
+  }
+
   const handleSave = (e) => {
     e.preventDefault()
     props.whenRegisteringACollaborator({
@@ -18,6 +25,7 @@ const Form = (props) => {
       image,
       team,
     })
+    cleanForm()
   }
 
   return (
