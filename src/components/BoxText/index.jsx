@@ -10,7 +10,6 @@ const BoxText = (props) => {
     <div className="box-text">
       <label>{props.label}</label>
       <input
-        type="text"
         value={props.valueText}
         onChange={handleTextValue}
         required={props.isRequired}
