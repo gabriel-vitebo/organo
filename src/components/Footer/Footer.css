@@ -1,0 +1,45 @@
+.footer {
+  background-color: #6278f7;
+}
+
+.footer .bgImage {
+  background-image: url("/public/assets/fundo.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 75px 0;
+}
+
+.footer button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.footer .icon img {
+  width: 35px;
+  height: 35px;
+}
+
+.footer .icon img:hover {
+  width: 40px;
+  height: 40px;
+}
+
+.footer .icon {
+  display: flex;
+  gap: 30px;
+}
+
+.footer .logo img {
+  width: 166px;
+  height: 63px;
+}
+
+.footer .byAlura {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
