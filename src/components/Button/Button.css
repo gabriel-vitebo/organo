@@ -11,3 +11,8 @@ button {
   margin: 40px 0 30px 0;
   cursor: pointer;
 }
+
+button:hover {
+  color: #95ffd4;
+  transform: scale(1.05);
+}

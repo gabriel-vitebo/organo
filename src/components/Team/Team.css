@@ -4,11 +4,14 @@
 }
 
 .team h3 {
-  font-size: 32px;
-  color: #212121;
   border-bottom: 4px solid;
   display: inline-block;
   padding-bottom: 8px;
+
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #212121;
 }
 
 .team .collaborators {
