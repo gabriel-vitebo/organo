@@ -57,21 +57,24 @@ function App() {
           setCollaborators([...collaborators, collaborator])
         }
       />
-      <section className="teams">
-        <h1>Minha organização</h1>
-        {teams.map((team, index) => (
-          <Team
-            team={team}
-            key={index}
-            primaryColor={team.primaryColor}
-            secondaryColor={team.secondaryColor}
-            collaborators={collaborators.filter(
-              (collaborator) => collaborator.team === team.name
-            )}
-            whenDeleting={handleRemoveCollaborator}
-          />
-        ))}
-      </section>
+      {collaborators.length > 0 && (
+        <section className="teams">
+          <h1>Minha organização</h1>
+          {teams.map((team, index) => (
+            <Team
+              team={team}
+              key={index}
+              primaryColor={team.primaryColor}
+              secondaryColor={team.secondaryColor}
+              teamCollaborators={collaborators.filter(
+                (collaborator) => collaborator.team === team.name
+              )}
+              whenDeleting={handleRemoveCollaborator}
+            />
+          ))}
+        </section>
+      )}
+
       <Footer />
     </div>
   )
