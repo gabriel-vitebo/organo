@@ -1,14 +1,17 @@
 import "./Collaborator.css"
 
-const Collaborator = ({ name, image, office, backgroundColor }) => {
+const Collaborator = ({ collaborator, backgroundColor }) => {
   return (
     <div className="collaborator">
       <div className="header" style={{ backgroundColor: backgroundColor }}>
-        <img src={image} alt={`Foto de perfil de ${name}`} />
+        <img
+          src={collaborator.image}
+          alt={`Foto de perfil de ${collaborator.name}`}
+        />
       </div>
       <div className="footer">
-        <h4>{name}</h4>
-        <h5>{office}</h5>
+        <h4>{collaborator.name}</h4>
+        <h5>{collaborator.office}</h5>
       </div>
     </div>
   )

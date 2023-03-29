@@ -1,19 +1,20 @@
 import "./BoxText.css"
 
-const BoxText = (props) => {
-  const placeHolderModified = `${props.placeholder}...`
-
-  const handleTextValue = (event) => {
-    props.onModified(event.target.value)
-  }
+const BoxText = ({
+  label,
+  valueText,
+  placeholder,
+  onModified,
+  isRequired = false,
+}) => {
   return (
     <div className="box-text">
-      <label>{props.label}</label>
+      <label>{label}</label>
       <input
-        value={props.valueText}
-        onChange={handleTextValue}
-        required={props.isRequired}
-        placeholder={placeHolderModified}
+        value={valueText}
+        onChange={(event) => onModified(event.target.value)}
+        required={isRequired}
+        placeholder={placeholder}
       />
     </div>
   )

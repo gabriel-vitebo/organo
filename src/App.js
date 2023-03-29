@@ -44,9 +44,6 @@ function App() {
   ]
 
   const [collaborators, setCollaborators] = useState([])
-  const forTheNewCollaboratorAdded = (collaborator) => {
-    setCollaborators([...collaborators, collaborator])
-  }
 
   return (
     <div className="App">
@@ -54,20 +51,23 @@ function App() {
       <Form
         teamsName={teams.map((team) => team.name)}
         whenRegisteringACollaborator={(collaborator) =>
-          forTheNewCollaboratorAdded(collaborator)
+          setCollaborators([...collaborators, collaborator])
         }
       />
-      {teams.map((team) => (
-        <Team
-          name={team.name}
-          key={team.name}
-          primaryColor={team.primaryColor}
-          secondaryColor={team.secondaryColor}
-          collaborators={collaborators.filter(
-            (collaborator) => collaborator.team === team.name
-          )}
-        />
-      ))}
+      <section className="teams">
+        <h1>Minha organização</h1>
+        {teams.map((team, index) => (
+          <Team
+            team={team}
+            key={index}
+            primaryColor={team.primaryColor}
+            secondaryColor={team.secondaryColor}
+            collaborators={collaborators.filter(
+              (collaborator) => collaborator.team === team.name
+            )}
+          />
+        ))}
+      </section>
       <Footer />
     </div>
   )

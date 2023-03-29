@@ -1,16 +1,16 @@
 import "./List.css"
 
-const List = (props) => {
+const List = ({ label, onModified, isRequired = false, value, items }) => {
   return (
     <div className="list">
-      <label>{props.label}</label>
+      <label>{label}</label>
       <select
-        onChange={(event) => props.onModified(event.target.value)}
-        required={props.isRequired}
-        value={props.value}
+        onChange={(event) => onModified(event.target.value)}
+        required={isRequired}
+        value={value}
       >
-        <option value=""></option>
-        {props.items.map((item) => (
+        <option />
+        {items.map((item) => (
           <option key={item}>{item}</option>
         ))}
       </select>

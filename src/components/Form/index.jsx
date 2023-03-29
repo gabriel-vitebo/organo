@@ -4,7 +4,7 @@ import List from "../List"
 import Button from "../Button"
 import { useState } from "react"
 
-const Form = (props) => {
+const Form = ({ teamsName, whenRegisteringACollaborator }) => {
   const [name, setName] = useState("")
   const [office, setOffice] = useState("")
   const [image, setImage] = useState("")
@@ -19,7 +19,7 @@ const Form = (props) => {
 
   const handleSave = (e) => {
     e.preventDefault()
-    props.whenRegisteringACollaborator({
+    whenRegisteringACollaborator({
       name,
       office,
       image,
@@ -57,9 +57,9 @@ const Form = (props) => {
           onModified={(value) => setTeam(value)}
           isRequired={true}
           label="Time"
-          items={props.teamsName}
+          items={teamsName}
         />
-        <Button>Criar card</Button>
+        <Button text="Criar card" />
       </form>
     </section>
   )

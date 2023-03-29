@@ -1,24 +1,21 @@
 import Collaborator from "../Collaborator"
 import "./Team.css"
 
-const Team = (props) => {
+const Team = ({ team, collaborators }) => {
   return (
-    props.collaborators.length > 0 && (
+    collaborators.length > 0 && (
       <section
         className="team"
-        style={{ backgroundColor: props.secondaryColor }}
+        style={{ backgroundColor: team.secondaryColor }}
       >
-        <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
+        <h3 style={{ borderColor: team.primaryColor }}>{team.name}</h3>
         <div className="collaborators">
-          {props.collaborators.map((collaborator) => {
+          {collaborators.map((collaborator, index) => {
             return (
               <Collaborator
-                backgroundColor={props.primaryColor}
-                key={collaborator.name}
-                name={collaborator.name}
-                image={collaborator.image}
-                office={collaborator.office}
-                handleDelete={collaborator.handleDelete}
+                backgroundColor={team.primaryColor}
+                key={index}
+                collaborator={collaborator}
               />
             )
           })}
