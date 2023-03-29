@@ -44,6 +44,9 @@ function App() {
   ]
 
   const [collaborators, setCollaborators] = useState([])
+  function handleRemoveCollaborator() {
+    console.log("deletando o colaborador")
+  }
 
   return (
     <div className="App">
@@ -65,6 +68,7 @@ function App() {
             collaborators={collaborators.filter(
               (collaborator) => collaborator.team === team.name
             )}
+            whenDeleting={handleRemoveCollaborator}
           />
         ))}
       </section>

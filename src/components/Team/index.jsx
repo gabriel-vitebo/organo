@@ -1,7 +1,7 @@
 import Collaborator from "../Collaborator"
 import "./Team.css"
 
-const Team = ({ team, collaborators }) => {
+const Team = ({ team, collaborators, whenDeleting }) => {
   return (
     collaborators.length > 0 && (
       <section
@@ -16,6 +16,7 @@ const Team = ({ team, collaborators }) => {
                 backgroundColor={team.primaryColor}
                 key={index}
                 collaborator={collaborator}
+                whenDeleting={whenDeleting}
               />
             )
           })}
