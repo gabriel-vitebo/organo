@@ -1,5 +1,6 @@
 import Collaborator from "../Collaborator"
 import "./Team.css"
+import hexToRgba from "hex-to-rgba"
 
 const Team = ({ team, teamCollaborators, whenDeleting, changeColor }) => {
   return (
@@ -8,21 +9,21 @@ const Team = ({ team, teamCollaborators, whenDeleting, changeColor }) => {
         className="team"
         style={{
           backgroundImage: "url(/assets/fundo.png)",
-          backgroundColor: team.secondaryColor,
+          backgroundColor: hexToRgba(team.color, "0.6"),
         }}
       >
         <input
           onChange={(e) => changeColor(e.target.value, team.name)}
-          value={team.primaryColor}
+          value={team.color}
           type="color"
           className="inputColor"
         />
-        <h3 style={{ borderColor: team.primaryColor }}>{team.name}</h3>
+        <h3 style={{ borderColor: team.color }}>{team.name}</h3>
         <div className="collaborators">
           {teamCollaborators.map((collaborator, index) => {
             return (
               <Collaborator
-                backgroundColor={team.primaryColor}
+                backgroundColor={team.color}
                 key={index}
                 collaborator={collaborator}
                 whenDeleting={whenDeleting}
