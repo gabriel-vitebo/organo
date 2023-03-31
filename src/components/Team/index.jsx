@@ -1,13 +1,22 @@
 import Collaborator from "../Collaborator"
 import "./Team.css"
 
-const Team = ({ team, teamCollaborators, whenDeleting }) => {
+const Team = ({ team, teamCollaborators, whenDeleting, changeColor }) => {
   return (
     teamCollaborators.length > 0 && (
       <section
         className="team"
-        style={{ backgroundColor: team.secondaryColor }}
+        style={{
+          backgroundImage: "url(/assets/fundo.png)",
+          backgroundColor: team.secondaryColor,
+        }}
       >
+        <input
+          onChange={(e) => changeColor(e.target.value, team.name)}
+          value={team.primaryColor}
+          type="color"
+          className="inputColor"
+        />
         <h3 style={{ borderColor: team.primaryColor }}>{team.name}</h3>
         <div className="collaborators">
           {teamCollaborators.map((collaborator, index) => {

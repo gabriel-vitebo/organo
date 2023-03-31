@@ -5,7 +5,7 @@ import Form from "./components/Form"
 import Team from "./components/Team"
 
 function App() {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: "Programação",
       primaryColor: "#57c278",
@@ -41,11 +41,22 @@ function App() {
       primaryColor: "#FF8A29",
       secondaryColor: "#FFEEDF",
     },
-  ]
+  ])
 
   const [collaborators, setCollaborators] = useState([])
   function handleRemoveCollaborator() {
     console.log("deletando o colaborador")
+  }
+
+  function changeTeamColor(color, name) {
+    setTeams(
+      teams.map((team) => {
+        if (team.name === name) {
+          team.primaryColor = color
+        }
+        return team
+      })
+    )
   }
 
   return (
@@ -62,6 +73,7 @@ function App() {
           <h1>Minha organização</h1>
           {teams.map((team, index) => (
             <Team
+              changeColor={changeTeamColor}
               team={team}
               key={index}
               primaryColor={team.primaryColor}
