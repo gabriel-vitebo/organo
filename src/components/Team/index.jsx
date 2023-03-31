@@ -13,7 +13,7 @@ const Team = ({ team, teamCollaborators, whenDeleting, changeColor }) => {
         }}
       >
         <input
-          onChange={(e) => changeColor(e.target.value, team.name)}
+          onChange={(e) => changeColor(e.target.value, team.id)}
           value={team.color}
           type="color"
           className="inputColor"
