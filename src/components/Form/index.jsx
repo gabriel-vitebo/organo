@@ -3,6 +3,7 @@ import BoxText from "../BoxText"
 import List from "../List"
 import Button from "../Button"
 import { useState } from "react"
+import { v4 as uuidv4 } from "uuid"
 
 const Form = ({ teamsName, whenRegisteringACollaborator }) => {
   const [name, setName] = useState("")
@@ -24,6 +25,7 @@ const Form = ({ teamsName, whenRegisteringACollaborator }) => {
       office,
       image,
       team,
+      id: uuidv4(),
     })
     cleanForm()
   }

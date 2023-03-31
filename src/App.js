@@ -45,8 +45,10 @@ function App() {
   ])
 
   const [collaborators, setCollaborators] = useState([])
-  function handleRemoveCollaborator() {
-    console.log("deletando o colaborador")
+  function handleRemoveCollaborator(collaboratorID) {
+    setCollaborators(
+      collaborators.filter((collaborator) => collaborator.id != collaboratorID)
+    )
   }
 
   function changeTeamColor(color, id) {
