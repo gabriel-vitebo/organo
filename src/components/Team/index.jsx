@@ -2,7 +2,13 @@ import Collaborator from "../Collaborator"
 import "./Team.css"
 import hexToRgba from "hex-to-rgba"
 
-const Team = ({ team, teamCollaborators, whenDeleting, changeColor }) => {
+const Team = ({
+  team,
+  teamCollaborators,
+  whenDeleting,
+  changeColor,
+  toFavorites,
+}) => {
   return (
     teamCollaborators.length > 0 && (
       <section
@@ -27,6 +33,7 @@ const Team = ({ team, teamCollaborators, whenDeleting, changeColor }) => {
                 key={index}
                 collaborator={collaborator}
                 whenDeleting={whenDeleting}
+                toFavorites={toFavorites}
               />
             )
           })}

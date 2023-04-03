@@ -27,7 +27,17 @@ function App() {
   }
 
   function registerTeam(newTeam) {
-    setTeams([...teams, { ...newTeam, id: uuidv4() }])
+    setTeams([...teams, { ...newTeam, id: uuidv4(), favorite: false }])
+  }
+
+  function resolveFavorite(id) {
+    setCollaborators(
+      collaborators.map((collaborator) => {
+        if (collaborator.id === id)
+          collaborator.favorite = !collaborator.favorite
+        return collaborator
+      })
+    )
   }
 
   return (
@@ -45,6 +55,7 @@ function App() {
           <h1>Minha organização</h1>
           {teams.map((team, index) => (
             <Team
+              toFavorites={resolveFavorite}
               changeColor={changeTeamColor}
               team={team}
               key={index}
