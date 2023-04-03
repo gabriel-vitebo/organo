@@ -1,8 +1,8 @@
-.box-text {
+.box {
   margin: 24px 0;
 }
 
-label {
+.box label {
   display: block;
   font-size: 18px;
   margin-bottom: 8px;
@@ -12,7 +12,7 @@ label {
   font-size: 18px;
 }
 
-input {
+.box input {
   background-color: #fff;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
   width: 100%;
@@ -26,9 +26,14 @@ input {
   color: #000000;
 }
 
-input::placeholder {
+.box input::placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #a4a4a4;
+}
+
+.box-color input {
+  height: 40px;
+  padding: 5px 24px;
 }

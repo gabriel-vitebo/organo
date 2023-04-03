@@ -1,6 +1,7 @@
-import "./BoxText.css"
+import "./Box.css"
 
-const BoxText = ({
+const Box = ({
+  type = "text",
   label,
   valueText,
   placeholder,
@@ -8,9 +9,10 @@ const BoxText = ({
   isRequired = false,
 }) => {
   return (
-    <div className="box-text">
+    <div className={`box box-${type}`}>
       <label>{label}</label>
       <input
+        type={type}
         value={valueText}
         onChange={(event) => onModified(event.target.value)}
         required={isRequired}
@@ -20,4 +22,4 @@ const BoxText = ({
   )
 }
 
-export default BoxText
+export default Box

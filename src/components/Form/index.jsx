@@ -1,5 +1,5 @@
 import "./Form.css"
-import BoxText from "../BoxText"
+import Box from "../Box"
 import List from "../List"
 import Button from "../Button"
 import { useState } from "react"
@@ -36,21 +36,21 @@ const Form = ({ teamsName, whenRegisteringACollaborator, registerTeam }) => {
     <section className="content">
       <form onSubmit={handleSave}>
         <h2>Preencha os dados para criar o card do colaborador:</h2>
-        <BoxText
+        <Box
           isRequired={true}
           label="Nome"
           placeholder="Digite seu nome"
           valueText={name}
           onModified={(value) => setName(value)}
         />
-        <BoxText
+        <Box
           isRequired={true}
           placeholder="Digite seu cargo"
           label="Cargo"
           valueText={office}
           onModified={(value) => setOffice(value)}
         />
-        <BoxText
+        <Box
           label="imagem"
           placeholder="informe o endereço da imagem"
           valueText={image}
@@ -72,15 +72,16 @@ const Form = ({ teamsName, whenRegisteringACollaborator, registerTeam }) => {
         }}
       >
         <h2>Preencha os dados para criar um novo time</h2>
-        <BoxText
+        <Box
           isRequired
           label="Nome"
           placeholder="Digite o nome do time"
           valueText={teamName}
           onModified={(value) => setTeamName(value)}
         />
-        <BoxText
+        <Box
           isRequired
+          type="color"
           placeholder="Digite a cor do time"
           label="Cor"
           valueText={teamColor}
