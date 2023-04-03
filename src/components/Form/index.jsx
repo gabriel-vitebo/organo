@@ -69,6 +69,7 @@ const Form = ({ teamsName, whenRegisteringACollaborator, registerTeam }) => {
         onSubmit={(e) => {
           e.preventDefault()
           registerTeam({ name: teamName, color: teamColor })
+          alert("time criado com sucesso!")
         }}
       >
         <h2>Preencha os dados para criar um novo time</h2>
