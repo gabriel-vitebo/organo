@@ -5,11 +5,13 @@ import Button from "../Button"
 import { useState } from "react"
 import { v4 as uuidv4 } from "uuid"
 
-const Form = ({ teamsName, whenRegisteringACollaborator }) => {
+const Form = ({ teamsName, whenRegisteringACollaborator, registerTeam }) => {
   const [name, setName] = useState("")
   const [office, setOffice] = useState("")
   const [image, setImage] = useState("")
   const [team, setTeam] = useState("")
+  const [teamName, setTeamName] = useState("")
+  const [teamColor, setTeamColor] = useState("")
 
   function cleanForm() {
     setName("")
@@ -62,6 +64,29 @@ const Form = ({ teamsName, whenRegisteringACollaborator }) => {
           items={teamsName}
         />
         <Button text="Criar card" />
+      </form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          registerTeam({ name: teamName, color: teamColor })
+        }}
+      >
+        <h2>Preencha os dados para criar um novo time</h2>
+        <BoxText
+          isRequired
+          label="Nome"
+          placeholder="Digite o nome do time"
+          valueText={teamName}
+          onModified={(value) => setTeamName(value)}
+        />
+        <BoxText
+          isRequired
+          placeholder="Digite a cor do time"
+          label="Cor"
+          valueText={teamColor}
+          onModified={(value) => setTeamColor(value)}
+        />
+        <Button text="Criar time" />
       </form>
     </section>
   )
